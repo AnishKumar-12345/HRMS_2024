@@ -20,7 +20,7 @@ import RegisterForm from '@/components/auth/RegisterForm.vue';
                                             class="bg-surface px-5 py-3 position-relative text-subtitle-1 text-grey100">Your
                                             Social Campaigns</span>
                                     </div>
-                                </div>
+                                </div> 
                                 <RegisterForm />
                                 <h6 class="text-subtitle-1  text-grey100 d-flex justify-center align-center mt-3">
                                     Already have an Account?

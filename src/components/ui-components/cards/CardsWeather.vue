@@ -77,7 +77,7 @@ const forecast = ref([
     <v-expand-transition>
       <div v-if="expand">
         <div class="py-2">
-          <v-slider
+          <v-slider 
             v-model="time"
             :max="6"
             :step="1"

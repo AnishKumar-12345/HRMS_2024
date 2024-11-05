@@ -111,7 +111,7 @@ const chartOptions = computed(() => {
         <v-card-item>
             <div class="d-flex align-center justify-space-between">
                 <div>
-                    <h5 class="text-h5 mb-1 font-weight-semibold">Profit & Expenses</h5>
+                    <h5 class="text-h5 mb-1 font-weight-semibold">Performance Comparison</h5>
                 </div>
                 <div>
                     <v-menu bottom left>

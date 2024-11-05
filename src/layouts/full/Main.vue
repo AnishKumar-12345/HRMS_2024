@@ -16,14 +16,14 @@ const sDrawer = ref(true);
 <template>
     <v-navigation-drawer left v-model="sDrawer" app class="leftSidebar ml-sm-5 mt-sm-5 bg-containerBg" elevation="10"
         width="270">
-        <div class="pa-5 pl-4 ">
+        <div class="pa-5 pl-4 nav_dashbar">
             <Logo />
         </div>
         <!-- ---------------------------------------------- -->
         <!---Navigation -->
         <!-- ---------------------------------------------- -->
-        <perfect-scrollbar class="scrollnavbar bg-containerBg overflow-y-hidden">
-            <v-list class="py-4 px-4 bg-containerBg">
+        <perfect-scrollbar class="scrollnavbar bg-containerBg overflow-y-hidden" >
+            <v-list class="py-4 px-4 bg-containerBg" style="background-color: #273143 !important;color: white !important;">
                 <!---Menu Loop -->
                 <template v-for="(item, i) in sidebarMenu">
                     <!---Item Sub Header -->
@@ -41,28 +41,36 @@ const sDrawer = ref(true);
             </div> -->
         </perfect-scrollbar>
     </v-navigation-drawer>
-    <div class="container verticalLayout">
-        <div class="maxWidth">
-            <v-app-bar elevation="0" height="70">
-                <div class="d-flex align-center justify-space-between w-100">
+    <div class="container verticalLayout" >
+        <div class="maxWidth" >
+            <v-app-bar elevation="0" height="70" >
+                <div class="d-flex align-center justify-space-between w-100" >
                     <div>
                         <v-btn class="hidden-lg-and-up text-muted" @click="sDrawer = !sDrawer" icon
                             variant="flat" size="small">
                             <Menu2Icon size="20" stroke-width="1.5" />
                         </v-btn>
                         <!-- Notification -->
-                        <NotificationDD />
-                    </div>
+                        <NotificationDD />                      
+
+                    </div> &nbsp; &nbsp; &nbsp;
+                    <v-text-field class="rounded-pill " placeholder="Search Employees or action" prepend-inner-icon="mdi-magnify" variant="outlined" hide-details single-line style="background-color: rgb(255, 255, 255) !important; color: black;"></v-text-field>
+                    <v-spacer></v-spacer>
                     <div>
+                        
                         <!-- Upgrade button -->
                         <!-- <v-btn class="mr-2 bg-primary rounded-pill"
                             href="https://www.wrappixel.com/templates/spike-vuejs-admin-dashboard/?ref=33"
                             target="_blank">Upgrade to Pro</v-btn> -->
                         <!-- User Profile -->
                         <ProfileDD />
+                        
                     </div>
                 </div>
             </v-app-bar>
         </div>
     </div>
 </template>
+<style scoped>
+
+</style>

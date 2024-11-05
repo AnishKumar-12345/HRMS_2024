@@ -23,7 +23,7 @@ export interface menu {
   chipVariant?: string;
   chipIcon?: string;
   children?: menu[];
-  disabled?: boolean;
+  disabled?: boolean; 
   type?: string;
   subCaption?: string;
 }
@@ -34,21 +34,21 @@ const sidebarItem: menu[] = [
     title: 'Dashboard',
     icon: LayoutDashboardIcon,
     BgColor: 'primary',
-    to: '/'
+    to: '/dashboard'
   },
   { header: 'HR Works' },
   {
     title: "CompanyProfile",
     icon: BuildingIcon,
     BgColor: 'primary',
-    to: "/ui/alerts",
+    to: "/ui/Companyprofile",
     
   },
   {
     title: "Employee Profile",
     icon: UserIcon,
     BgColor: 'primary',
-    to: "/ui/buttons",
+    to: "/ui/Employeeprofile",
   },
   {
     title: "Attendance",
@@ -59,8 +59,8 @@ const sidebarItem: menu[] = [
   {
     title: "Leave",
     icon: DoorExitIcon,
-    BgColor: 'primary',
-    to: "/ui/tables",
+    BgColor: 'primary', 
+    to: "/ui/Leavemanagement", 
   },
 
   
@@ -78,9 +78,9 @@ const sidebarItem: menu[] = [
     to: '/sample-page'
 },
 
-{ header: 'Auth' },
+// { header: 'Auth' },
   {
-    title: 'Login',
+    title: 'Calendar',
     icon: LoginIcon,
     BgColor: 'primary',
     to: '/auth/login'

@@ -12,39 +12,39 @@ import CardsTwitter from "@/components/ui-components/cards/CardsTwitter.vue";
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12" sm="12" lg="6">
-      <UiChildCard title="With Props">
+  <v-row class="pa-0 ma-0">
+    <v-col  cols="12" sm="12" lg="4" >
+      <UiChildCard title="Attendance Stats">
         <CardsProps />
-      </UiChildCard>
+      </UiChildCard> 
     </v-col>
-    <v-col cols="12" sm="12" lg="6">
-      <UiChildCard title="With Slots">
+    <v-col cols="12" sm="12" lg="4" >
+      <UiChildCard title="Timings" >
         <CardsSlots />
       </UiChildCard>
     </v-col>
-    <v-col cols="12" sm="12" lg="6" class="d-flex align-items-stretch">
-      <UiChildCard title="Content Wrap">
+    <v-col cols="12" sm="12" lg="4" class="d-flex align-items-stretch">
+      <UiChildCard title="Actions">
         <CardsContentWrap />
       </UiChildCard>
     </v-col>
 
-    <v-col cols="12" sm="12" lg="6" class="d-flex align-items-stretch">
+    <!-- <v-col cols="12" sm="12" lg="4" class="d-flex align-items-stretch">
       <UiChildCard title="Card Media">
         <CardsMedia />
       </UiChildCard>
     </v-col>
 
-    <v-col cols="12" sm="12" lg="6" class="d-flex align-items-stretch">
+    <v-col cols="12" sm="12" lg="4" class="d-flex align-items-stretch">
       <UiChildCard title="Weather Card">
         <CardsWeather />
       </UiChildCard>
     </v-col>
 
-    <v-col cols="12" sm="12" lg="6">
+    <v-col cols="12" sm="12" lg="4">
       <UiChildCard title="Twitter Card">
         <CardsTwitter />
       </UiChildCard>
-    </v-col>
+    </v-col> -->
   </v-row>
 </template>

@@ -6,8 +6,9 @@ const props = defineProps({ item: Object, level: Number });
 <template>
     <!---Single Item-->
     <div class="mb-1">
+        <!-- :color="item.BgColor" -->
         <v-list-item  :to="item.type === 'external' ? '' : item.to" :href="item.type === 'external' ? item.to : ''" rounded
-            :class="'  bg-hover-' + item.BgColor" :color="item.BgColor" :ripple="false" :disabled="item.disabled"
+            :class="'  bg-hover-' + item.BgColor"  :ripple="false" :disabled="item.disabled"
             :target="item.type === 'external' ? '_blank' : ''">
             <!---If icon-->
             <template v-slot:prepend>
@@ -15,9 +16,10 @@ const props = defineProps({ item: Object, level: Number });
                     <span class="icon-box">
                         <Icon :item="item.icon" :level="level" :class="'position-relative z-index-2 texthover-' + item.BgColor" />
                     </span>
-                </div>
+                </div> 
             </template>
-            <v-list-item-title class="text-subtitle-1 font-weight-medium" :color="item.BgColor">{{ item.title}}</v-list-item-title>
+            <!-- :color="item.BgColor" -->
+            <v-list-item-title class="text-subtitle-1 font-weight-medium" >{{ item.title}}</v-list-item-title>
             <!---If Caption-->
             <v-list-item-subtitle v-if="item.subCaption" class="text-caption mt-n1 hide-menu">
                 {{ item.subCaption }}

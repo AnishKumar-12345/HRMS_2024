@@ -5,6 +5,6 @@
     <v-btn variant="tonal" color="primary">tonal</v-btn>
     <v-btn variant="outlined" color="primary">outlined</v-btn>
     <v-btn variant="text" color="primary">text</v-btn>
-    <v-btn variant="plain" color="primary">plain</v-btn>
+    <v-btn variant="plain" color="primary">plain</v-btn> 
   </div>
 </template>

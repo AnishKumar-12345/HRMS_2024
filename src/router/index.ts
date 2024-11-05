@@ -9,7 +9,8 @@ export const router = createRouter({
             path: '/:pathMatch(.*)*',
             component: () => import('@/views/authentication/Error.vue')
         },
-        MainRoutes,
-        AuthRoutes
+        AuthRoutes,
+        MainRoutes
+        
     ]
 });

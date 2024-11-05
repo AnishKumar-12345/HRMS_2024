@@ -14,7 +14,7 @@
     elevation="0"
   >
     <template v-slot:prepend>
-      <v-icon size="x-large"></v-icon>
+      <v-icon size="x-large"></v-icon> 
     </template>
 
     <v-card-text class="text-h5 py-2">

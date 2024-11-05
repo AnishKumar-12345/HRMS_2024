@@ -21,7 +21,7 @@ import proimg2 from '@/assets/images/blog/blog-img4.jpg';
 
     <v-card-text>
       <div>Whitehaven Beach</div>
-
+ 
       <div>Whitsunday Island, Whitsunday Islands</div>
     </v-card-text>
 

@@ -72,7 +72,7 @@ const Chart = [38, 40, 25];
     <v-card elevation="10" class="withbg">
         <v-card-item>
             <div class="d-sm-flex align-center justify-space-between pt-sm-2">
-                <v-card-title class="text-h5">Traffic Distribution</v-card-title>
+                <v-card-title class="text-h5">My Performance</v-card-title>
             </div>
             <v-row>
                 <v-col cols="6" sm="7">

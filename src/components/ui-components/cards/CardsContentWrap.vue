@@ -1,82 +1,75 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import proimg1 from '@/assets/images/blog/blog-img1.jpg';
+import { ref, onMounted, onUnmounted } from 'vue';
 
-const messages = ref([
-  {
-    from: "You",
-    message: `Sure, I'll see you later.`,
-    time: "10:42am",
-    color: "primary",
-  },
-  {
-    from: "John Doe",
-    message: "Yeah, sure. Does 1:00pm work?",
-    time: "10:37am",
-    color: "secondary",
-  },
-  {
-    from: "You",
-    message: "Did you still want to grab lunch today?",
-    time: "9:47am",
-    color: "success",
-  },
-]);
+const currentTime = ref<string>('00:00:00');
+const currentDate = ref<string>('');
+const clockout = ref(false);
+let timerInterval: ReturnType<typeof setInterval> | null = null;
+
+// Function to update the time and date
+const updateTime = () => {
+  const now = new Date();
+  currentTime.value = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  currentDate.value = now.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+};
+
+// Function to handle clock-in action
+const handleClockIn = () => {
+  console.log('Clock-in button clicked!');
+  clockout.value = true;
+  updateTime(); // Initialize time and date display
+  
+  timerInterval = setInterval(updateTime, 1000); // Start updating every second
+};
+
+const handleClockOut = () => {
+  console.log('Clock-out button clicked!');
+  clockout.value = false;
+  
+  if (timerInterval) {
+    clearInterval(timerInterval); // Stop updating
+    timerInterval = null;
+  }
+  currentTime.value = '00:00:00'; // Reset time display
+};
+
+onMounted(() => {
+  currentDate.value = new Date().toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+});
+
+onUnmounted(() => {
+  if (timerInterval) clearInterval(timerInterval); // Clear interval on component unmount
+});
 </script>
 
 <template>
-  <!-- ----------------------------------------------------------------------------- -->
-  <!-- Content Wrap -->
-  <!-- ----------------------------------------------------------------------------- -->
-  <div class="pa-3">
-    <v-row justify="space-around">
-      <v-card elevation="0">
-        <v-img
-          height="200"
-          :src='proimg1'
-          cover
-          class="text-white"
-        >
-          <v-layout full-height>
-            <v-app-bar
-              density="comfortable"
-              color="rgba(0, 0, 0, 0)"
-              flat
-              theme="dark"
-            >
-              <template v-slot:prepend>
-                <v-app-bar-nav-icon></v-app-bar-nav-icon>
-              </template>
-
-              <v-toolbar-title class="text-subtitle-1"> Messages </v-toolbar-title>
-
-              <template v-slot:append>
-                <v-icon icon="mdi-dots-vertical"></v-icon>
-              </template>
-            </v-app-bar>
-          </v-layout>
-        </v-img>
-
-        <v-card-text>
-          <div class="font-weight-bold ml-1 mb-2">Today</div>
-
-          <v-timeline density="compact">
-            <v-timeline-item
-              v-for="message in messages"
-              :key="message.time"
-              :dot-color="message.color"
-              size="x-small"
-            >
-              <div class="mb-4">
-                <div class="font-weight-normal">
-                  <strong>{{ message.from }}</strong> @{{ message.time }}
-                </div>
-                <div>{{ message.message }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-      </v-card>
-    </v-row>
-  </div>
+  <v-card elevation="0" class="p-0 m-0"> 
+    <v-card-text class="py-0 pa-0 ma-0">
+      <v-row>
+        <v-col cols="6" sm="6" lg="6" class="d-flex flex-column align-center">
+          <div class="text-h3">{{ currentTime }}</div> <!-- Time Display with Big Letters -->
+          <div class="text-caption">{{ currentDate }}</div> <!-- Date Display -->
+        </v-col>
+        <v-col cols="6" sm="6" lg="6">
+          <v-btn color="primary" @click="handleClockIn" variant="flat" v-if="!clockout">
+            Web CheckIn
+          </v-btn>
+          <v-btn color="error" @click="handleClockOut" variant="flat" v-if="clockout">
+            Web CheckOut
+          </v-btn>
+          <div class="p-3 m-3 mt-3">
+            <span><a href="" class="text-decoration-none text--blue">Remote Clock-in</a></span><br>
+            <span><a href="" class="text-decoration-none" color="primary">Work From Home</a></span>
+          </div>
+        </v-col>
+      </v-row>
+    </v-card-text>
+  </v-card>
 </template>
+
+<style scoped>
+.text-h1 {
+  font-size: 1rem; /* Adjust size as needed */
+  font-weight: normal;
+}
+</style>

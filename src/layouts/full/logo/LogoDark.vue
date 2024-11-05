@@ -12,8 +12,8 @@ import { RouterLink } from 'vue-router';
       />
     </RouterLink>
     <h1 class="company-name">
-      DIZITIVE IT
-      <span class="company-slogan">PASSION TO INNOVATE</span>
+      Dizitive IT
+      <span class="company-slogan">Passion to innovate</span>
     </h1>
   </div>
 </template>
@@ -21,6 +21,7 @@ import { RouterLink } from 'vue-router';
 <style scoped>
 .logo-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
 }
@@ -30,8 +31,8 @@ import { RouterLink } from 'vue-router';
 }
 
 .logo-image {
-  height: 35px;
-  width: 35px;
+  height: 38px;
+  width: 38px;
   transition: transform 0.3s ease;
 }
 
@@ -40,18 +41,18 @@ import { RouterLink } from 'vue-router';
 }
 
 .company-name {
-  font-weight: 600;
-  font-size: 1.25rem;
-  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.50rem;
+  /* text-transform: uppercase; */
   /* color: #1518a4; */
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .company-slogan {
   display: block;
   font-size: 0.75rem;
-  font-weight: normal;
-  color: #666;
+  font-weight: 600;
+  /* color: #ffffff; */
   margin-top: 0.25rem;
 }
 </style>

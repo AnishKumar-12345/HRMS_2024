@@ -28,6 +28,17 @@ export default defineConfig({
     },
     // build: {
     //     rollupOptions: {
+    //       output: {
+    //         manualChunks(id) {
+    //           if (id.includes('node_modules')) {
+    //             return 'vendor'; // bundle vendor dependencies into a separate chunk
+    //           }
+    //         },
+    //       },
+    //     },
+    //   },
+    // build: {
+    //     rollupOptions: {
     //         treeshake:  false 
     //     }
     // },

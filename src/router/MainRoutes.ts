@@ -7,19 +7,19 @@ const MainRoutes = {
     component: () => import('@/layouts/full/FullLayout.vue'),
     children: [
         {
-            name: 'Dashboard',
-            path: '/',
+            name: 'Dashboard', 
+            path: '/dashboard',
             component: () => import('@/views/dashboard/index.vue') 
         },
         {
-            name: 'Alert',
-            path: '/ui/alerts',
-            component: () => import('@/views/ui-components/Alerts.vue')
+            name: 'Companyprofile',
+            path: '/ui/Companyprofile',
+            component: () => import('@/views/ui-components/Companyprofile.vue')
         },
         {
-            name: 'Buttons',
-            path: '/ui/buttons',
-            component: () => import('@/views/ui-components/Buttons.vue')
+            name: 'Employeeprofile',
+            path: '/ui/Employeeprofile',
+            component: () => import('@/views/ui-components/Employeeprofile.vue')
         },
         {
             name: 'Cards',
@@ -27,9 +27,9 @@ const MainRoutes = {
             component: () => import('@/views/ui-components/Cards.vue')
         },
         {
-            name: 'Tables',
-            path: '/ui/tables',
-            component: () => import('@/views/ui-components/Tables.vue')
+            name: 'Leave',
+            path: '/ui/Leavemanagement', 
+            component: () => import('@/views/ui-components/Leavemanagement.vue')
         },
         {
             name: 'Icons',

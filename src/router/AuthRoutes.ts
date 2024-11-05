@@ -3,12 +3,12 @@ const AuthRoutes = {
     component: () => import('@/layouts/blank/BlankLayout.vue'),
     meta: {
         requiresAuth: false
-    },
+    }, 
     children: [
  
         {
-            name: 'Login', 
-            path: '/auth/login',
+            name: 'Login',  
+            path: '/',
             component: () => import('@/views/authentication/BoxedLogin.vue')
         },
         {

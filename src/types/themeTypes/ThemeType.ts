@@ -4,12 +4,14 @@ export type ThemeTypes = {
     variables?: object;
     colors: {
         primary?: string;
+        primary2?: string;
         secondary?: string;
         info?: string;
         success?: string;
         warning?: string;
         error?: string;
         indigo?: string;
+        lightwhite?: string;
         lightprimary?: string;
         lightsecondary?: string;
         lightsuccess?: string;

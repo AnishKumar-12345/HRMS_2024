@@ -1,14 +1,32 @@
 /*This is for the logo*/
 .leftSidebar {
     border-radius: 18px;
-    height: calc((100% - 40px)) !important;
+    height: calc((100% - 40px)) !important; 
     overflow: hidden;
 
     @media screen and (max-width:1279px) {
         height: 100% !important;
         border-radius: 0;
     }
+    .nav_dashbar{
+        background: linear-gradient(135deg, #4386cd, #6a0dad) !important;
+        color: white;
 
+        // &::before,
+        // &::after {
+        //   content: '';
+        //   position: absolute;
+        // //   top: 20%;
+        //   left: -10%;
+        //   width: 40px;
+        //   height: 40px;
+        //   background: radial-gradient(circle at 40%, #e9cbd1 10%, #ebe265 80%);
+        //   border-radius: 50%;
+        //   opacity: 0.8;
+        //   transform: rotate(45deg);
+        // }
+        
+    }
 
     .mini-icon {
         display: none;
@@ -176,11 +194,11 @@
 
         
         .bg-hover-primary::before {
-            background-color: rgba(var(--v-theme-primary), 12%);
+            background-color: rgba(var(--v-theme-lightwhite), 12%);
         }
     
         .bgicn-hover-primary {
-            background-color: rgba(var(--v-theme-primary), 12%);
+            background-color: rgba(var(--v-theme-lightwhite), 12%);
         }
 
        
@@ -231,7 +249,7 @@
                         border-radius: 0 24px 24px 0;
                     }
                     .bgicn-hover-primary {
-                        background-color: rgba(var(--v-theme-primary), 0%);
+                        background-color: rgba(var(--v-theme-lightwhite), 0%);
                     }
                 }
 
@@ -241,15 +259,15 @@
                 .navbox {
                     &:before {
                         width: calc(100% + 16px);
-                        border-radius: 0 24px 24px 0;
+                        border-radius: 0 24px 24px 0; 
                     }
 
                     .texthover-primary{
-                        color: rgb(var(--v-theme-primary));
+                        color: rgb(var(--v-theme-lightwhite));
                     }
                     
                     .bgicn-hover-primary {
-                        background-color: rgba(var(--v-theme-primary), 0%);
+                        background-color: rgba(var(--v-theme-lightwhite), 0%);
                     }
                 }
             }
