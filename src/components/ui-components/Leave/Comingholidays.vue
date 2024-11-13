@@ -1,5 +1,5 @@
 <template>
-    <v-card elevation="0">
+    <v-card elevation="1">
         <v-card-title class="text-h6">
             Coming Public Holidays
         </v-card-title>

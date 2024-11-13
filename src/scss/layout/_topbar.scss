@@ -63,10 +63,10 @@
         &.v-toolbar {
             top: 20px !important;
             background-color: rgba(var(--v-theme-background));
-            z-index: 2;
-            max-width: 1300px;
-            margin: 0 auto;
-            left: 290px !important;
+            // z-index: 2;
+            // max-width: 1250px;
+            // margin: 0 auto;
+            // left: 290px !important;
             right: 0;
             border-radius: 15px;
             box-shadow: 0 2px 6px rgba(37, 83, 185, 0.1) !important;
@@ -93,7 +93,7 @@
 @media screen and (max-width:1600px) and (min-width:1280px) {
     .verticalLayout {
         .v-app-bar.v-toolbar {
-            max-width: calc((100% - 270px) - 60px) !important;
+            // max-width: calc((100% - 270px) - 60px) !important;
         }
     }
 

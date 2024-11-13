@@ -1,7 +1,7 @@
 <template>
-   <v-row>
-    <v-col md="8">
-        <v-card elevation="0" class="p-0 m-0">
+
+
+        <v-card elevation="1" class="p-0 m-0">
         <v-card-text class="py-2 pa-2 ma-2">
             <v-row>
                 <v-col cols="6" sm="6" lg="6" class="d-flex flex-column align-center">
@@ -16,7 +16,7 @@
         </v-card-text>
     </v-card>
 
-    <v-card elevation="0" class="mt-2">
+    <v-card elevation="1" class="mt-2">
         <v-card-text class="py-2 pa-2 ma-2">
             <v-row>
                 <v-col cols="12" md="4" sm="12">
@@ -35,17 +35,17 @@
             </v-card-text>
     </v-card>
    
-    </v-col>
+ 
    
-    <v-col >
+    <!-- <v-col >
         <v-card elevation="0">
             <v-card-title class="text-h5">Team Availability</v-card-title>
             <v-card-text>
 
             </v-card-text>
         </v-card>
-    </v-col>   
-   </v-row>
+    </v-col>    -->
+
   
 
     <v-dialog v-model="dialog" max-width="800" persistent>
@@ -134,7 +134,7 @@ const Chart = [16,3];
 const chartOptions = computed(() => {
     return {
         series: Chart,
-        labels: ["Total", "Remaining"],
+        labels: ["Totalleave", "Remaining"],
         dataLabels: {
             enabled: false,
         },
@@ -142,13 +142,13 @@ const chartOptions = computed(() => {
             theme: "dark",
             fillSeriesColor: false,
         },
-        colors: [success,"#98aab4"],
+        colors: [primary,"#d8d8d8"],
 
         legend: {
             show: true, 
             position: "bottom",
             fontSize: "14px",
-            color: success,
+            color: primary,
             formatter: function(seriesName: string, opts: { w: { globals: { series: number[] } }; seriesIndex: number }) {
                 // Append the series data to each label
                 return `${seriesName}: ${opts.w.globals.series[opts.seriesIndex]}`;
@@ -178,8 +178,9 @@ const chartOptions = computed(() => {
                         total: {
                             showAlways: true,
                             show: true,
-                            label: 'Remaining',
+                            label: 'TOTAL',
                             fontSize: "14px",
+                            fontWeight: "Bold",
                             color: primary,
                             formatter: () => Chart[1].toString(),
                             },
@@ -206,7 +207,7 @@ const Chart2 = [8,5];
 const chartOptions2 = computed(() => {
     return {
         series: Chart,
-        labels: ["Sick", "Remaining"],
+        labels: ["Totalsick", "Remaining"],
         dataLabels: {
             enabled: false,
         },
@@ -214,7 +215,7 @@ const chartOptions2 = computed(() => {
             theme: "dark",
             fillSeriesColor: false,
         },
-        colors: [error,"#98aab4"],
+        colors: [success,"#d8d8d8"],
 
         legend: {
             show: true, 
@@ -250,9 +251,10 @@ const chartOptions2 = computed(() => {
                         total: {
                             showAlways: true,
                             show: true,
-                            label: 'Remaining',
+                            label: 'SICK',
                             fontSize: "14px",
-                            color: primary,
+                            fontWeight: "Bold",
+                            color: success,
                             formatter: () => Chart2[1].toString(),
                             },
                         name: {
@@ -263,7 +265,7 @@ const chartOptions2 = computed(() => {
                         },
                         value: {
                             show: true,
-                            color: primary,
+                            color: success,
                         },
                     },
                 },
@@ -277,7 +279,7 @@ const Chart3 = [8,5];
 const chartOptions3 = computed(() => {
     return {
         series: Chart,
-        labels: ["Casual", "Remaining"],
+        labels: ["Totalcasual", "Remaining"],
         dataLabels: {
             enabled: false,
         },
@@ -285,13 +287,13 @@ const chartOptions3 = computed(() => {
             theme: "dark",
             fillSeriesColor: false,
         },
-        colors: [warning,"#98aab4"],
+        colors: [error,"#d8d8d8"],
 
         legend: {
             show: true, 
             position: "bottom",
             fontSize: "14px",
-            color: success,
+            color: error,
             formatter: function(seriesName: string, opts: { w: { globals: { series: number[] } }; seriesIndex: number }) {
                 // Append the series data to each label
                 return `${seriesName}: ${opts.w.globals.series[opts.seriesIndex]}`;
@@ -322,9 +324,10 @@ const chartOptions3 = computed(() => {
                         total: {
                             showAlways: true,
                             show: true,
-                            label: 'Remaining',
+                            label: 'CASUAL',
                             fontSize: "14px",
-                            color: primary,
+                            fontWeight: "Bold",
+                            color: error,
                             formatter: () => Chart3[1].toString(),
                             },
                         name: {
@@ -335,7 +338,7 @@ const chartOptions3 = computed(() => {
                         },
                         value: {
                             show: true,
-                            color: primary,
+                            color: error,
                         },
                     },
                 },

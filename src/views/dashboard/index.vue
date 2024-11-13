@@ -11,7 +11,7 @@ import TopPayingClients from "@/components/dashboards/TopPayingClients.vue";
 <template>
     <v-row>
         <v-col cols="12" sm="12" lg="8">
-            <ProfitExpanse />
+            <ProfitExpanse /> 
         </v-col>
         <v-col cols="12" sm="12" lg="4">
             <div class="mb-6">

@@ -12,7 +12,7 @@ const logindata = ref({
     password: ''
 });
 const snackbar = ref({
-    show: false,
+    show: false, 
     message: '',
     color: ''
 });
@@ -33,18 +33,19 @@ const loginuser = () => {
         password: logindata.value.password
     };
     Logindetails.Loginregistration(requestData).then((response) => {
-        console.log('check',response.data.user_data.emp_id);
+        // console.log('check',response.data.user_data.emp_id);
         // const res = response.data
         if (response.data.status == 1) {
             setTimeout(() => {
                 router.push('/dashboard');
             }, 500);
+            localStorage.setItem("HRMSuserID",response.data.user_data.emp_id);
             snackbar.value = {
                 show: true,
                 message: response.data.message,
                 color: 'primary'
             };
-            localStorage.setItem("HRMSuserID",response.data.user_data.emp_id);
+        
         } else {
             snackbar.value = {
                 show: true,

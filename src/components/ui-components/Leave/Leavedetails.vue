@@ -1,10 +1,34 @@
 <template>
-     <v-card elevation="0" class="mt-2">
+     <v-card elevation="1" class="mt-2">
         <v-card-text>
             <v-data-table
             :headers="headers"
             :items="Leave_data"
+            height="400px"
+            fixed-header 
+            :items-per-page="10" 
+             density="compact"
+             :search="search"
             >
+            <template v-slot:top>
+                <v-toolbar prominent dark style="background-color: rgb(255, 255, 255)">
+                    <v-toolbar-title>
+                        <template v-slot:text>
+                            <v-text-field
+                                v-model="search"
+                                label="Search"
+                                prepend-inner-icon="mdi-magnify"
+                                variant="outlined"
+                                hide-details
+                                single-line
+                            ></v-text-field>
+                        </template>
+                    </v-toolbar-title>
+                    <v-divider class="mx-4" inset vertical></v-divider>
+                    <v-spacer></v-spacer>
+
+                    </v-toolbar>
+                    </template>              
             <template v-slot:item.leave_status="{ item }">
                <v-chip :color="item.leave_status == 'Pending' ? 'error' : 'success'">{{ item.leave_status }}</v-chip>
             </template>
@@ -26,6 +50,7 @@
 import { useHRMSDataStore } from '../../../store/apistore';
 import { ref, computed, watch, nextTick, onMounted, onBeforeMount } from 'vue';
 const Getleave = useHRMSDataStore();
+const search = ref(null);
 
 const headers = [
 { title: 'Employee Name', key: 'emp_id' },
@@ -49,7 +74,7 @@ onBeforeMount(() => {
     Getleave.getLeavesdata(userID.value).then((response) => {
         // console.log({response});
         if (response.status == 1) {
-            Leave_data.value = response.data;
+            Leave_data.value = response.data.reverse();
                 snackbar.value = {
                     show: true,
                     message: response.message,
